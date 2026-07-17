@@ -28,14 +28,23 @@ function caricaFoto() {
             }
         )
         .then(response => response.json())
-        .then(data => {
+       .then(data => {
 
-            console.log("Foto caricata:", data.secure_url);
+    console.log(data);
 
-            messaggio.innerHTML =
-            "✅ Foto caricata con successo!";
+    if (data.secure_url) {
 
-        })
+        messaggio.innerHTML =
+        "✅ Foto caricata con successo!";
+
+    } else {
+
+        messaggio.innerHTML =
+        "❌ Cloudinary non ha ricevuto la foto";
+
+    }
+
+})
         .catch(error => {
 
             console.error("Errore:", error);
