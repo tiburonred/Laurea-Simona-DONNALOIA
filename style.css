@@ -25,10 +25,10 @@ body {
 
 
 h1 {
-    font-size: 42px;
-    margin-top: 20px;
+    font-size: 3.8rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
-
 
 .data {
     color: #d9b56d;
