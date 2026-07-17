@@ -1,57 +1,61 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laurea di Simona Donnaloia</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<section class="hero">
-
-    <div class="decorazione">🎓</div>
-
-    <h1>Laurea di<br>Simona Donnaloia</h1>
-
-    <p class="data">8 Agosto 2026</p>
-
-    <p class="location">
-        Mon Rêve Ecogreen Resort
-    </p>
-
-    <div class="foto-placeholder">
-        Inserire foto di Simona
-    </div>
-
-    <p class="messaggio">
-        Grazie per aver condiviso con me questa giornata speciale.<br>
-        Carica le tue foto e rivivi insieme a noi i momenti più belli.
-    </p>
-
-    <button>
-        📸 Carica le tue foto
-    </button>
-
-</section>
+body {
+    margin: 0;
+    font-family: "Georgia", serif;
+    background: #f8f1ed;
+    color: #4b101c;
+}
 
 
-<section class="galleria">
+.hero {
+    min-height: 100vh;
+    text-align: center;
+    padding: 40px 20px;
+    background:
+    linear-gradient(
+    rgba(90,10,30,0.92),
+    rgba(60,5,20,0.95)
+    );
+    color: white;
+}
 
-    <h2>I ricordi della serata</h2>
 
-    <div class="foto-grid">
-        <div class="box">Foto</div>
-        <div class="box">Foto</div>
-        <div class="box">Foto</div>
-        <div class="box">Foto</div>
-    </div>
-
-</section>
+.decorazione {
+    font-size: 50px;
+}
 
 
-<script src="script.js"></script>
+h1 {
+    font-size: 42px;
+    margin-top: 20px;
+}
 
-</body>
-</html>
+
+.data {
+    color: #d9b56d;
+    font-size: 25px;
+}
+
+
+.location {
+    font-size: 20px;
+}
+
+
+.foto-placeholder {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 30px auto;
+    border: 4px solid #d9b56d;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eee;
+    color:#777;
+}
+
+
+.messaggio {
+    line-height:1.7;
+    font-size:18px;
+}
