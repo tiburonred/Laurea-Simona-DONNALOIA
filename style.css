@@ -56,8 +56,10 @@ h1 {
 
 
 .messaggio {
-    line-height:1.7;
-    font-size:18px;
+    max-width: 600px;
+    margin: 30px auto;
+    line-height: 1.7;
+    font-size: 1.2rem;
 }
 
 
