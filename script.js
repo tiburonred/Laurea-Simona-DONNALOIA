@@ -18,8 +18,8 @@ function caricaFoto() {
     formData.append("file", files[0]);
     formData.append("upload_preset", uploadPreset);
 
-    fetch(
-        https://api.cloudinary.com/v1_1/${cloudName}/image/upload,
+    'fetch(
+        https://api.cloudinary.com/v1_1/${cloudName}/image/upload' ,
         {
             method: "POST",
             body: formData
