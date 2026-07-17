@@ -1,5 +1,5 @@
 const cloudName = "xcc0isj0";
-const uploadPreset = "laurea-simona";
+const uploadPreset = "Laurea-Simona-Donnaloia";
 
 function caricaFoto() {
 
@@ -32,7 +32,8 @@ function caricaFoto() {
 
             console.log("Foto caricata:", data.secure_url);
 
-            messaggio.innerHTML = "✅ Foto caricata con successo!";
+            messaggio.innerHTML =
+            "✅ Foto caricata con successo!";
 
         })
         .catch(error => {
