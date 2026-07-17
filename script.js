@@ -28,15 +28,23 @@ function caricaFoto() {
             }
         )
         .then(response => response.json())
-       .then(data => {
+      .then(data => {
 
-    console.log(data);
+    console.log("RISPOSTA CLOUDINARY:", data);
 
     if (data.secure_url) {
 
         messaggio.innerHTML =
         "✅ Foto caricata con successo!";
 
+    } else {
+
+        messaggio.innerHTML =
+        "❌ Upload non riuscito";
+
+    }
+
+})
     } else {
 
         messaggio.innerHTML =
