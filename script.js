@@ -1,5 +1,5 @@
 const cloudName = "xcc0isj0";
-const uploadPreset = "Laurea-Simona";,
+const uploadPreset = "Laurea-Simona";
 
 function caricaFoto() {
 
@@ -13,43 +13,43 @@ function caricaFoto() {
 
     messaggio.innerHTML = "⏳ Caricamento in corso...";
 
-    for (let i = 0; i < files.length; i++) {
+    let formData = new FormData();
 
-        let formData = new FormData();
+    formData.append("file", files[0]);
+    formData.append("upload_preset", uploadPreset);
 
-        formData.append("file", files[i]);
-        formData.append("upload_preset", uploadPreset);
+    fetch(
+        https://api.cloudinary.com/v1_1/${cloudName}/image/upload,
+        {
+            method: "POST",
+            body: formData
+        }
+    )
+    .then(response => response.json())
+    .then(data => {
 
-        fetch(
-            `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
-            {
-                method: "POST",
-                body: formData
-            }
-        )
-        .then(response => response.json())
-     .then(data => {
+        console.log(data);
 
-    messaggio.innerHTML = 
-    "Risposta Cloudinary: " + JSON.stringify(data);
-
-})
-    } else {
-
-        messaggio.innerHTML =
-        "❌ Cloudinary non ha ricevuto la foto";
-
-    }
-
-})
-        .catch(error => {
-
-            console.error("Errore:", error);
+        if (data.secure_url) {
 
             messaggio.innerHTML =
-            "❌ Errore durante il caricamento";
+            "✅ Foto caricata con successo!";
 
-        });
+        } else {
 
-    }
+            messaggio.innerHTML =
+            "❌ Errore: " + JSON.stringify(data);
+
+        }
+
+    })
+    .catch(error => {
+
+        console.error(error);
+
+        messaggio.innerHTML =
+        "❌ Errore durante il caricamento";
+
+    });
+
 }
