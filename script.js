@@ -48,9 +48,31 @@ function caricaFoto() {
 
             messaggio.innerHTML =
             "❌ Errore durante il caricamento";
-
+            
         });
 
     }
 
 }
+function mostraGalleria() {
+
+    const galleria = document.getElementById("galleriaFoto");
+
+    const immagini = [
+        "https://res.cloudinary.com/xcc0isj0/image/upload/v1784366321/dvhj9abb1ts1h2czr3tz.jpg"
+    ];
+
+    immagini.forEach(url => {
+
+        const img = document.createElement("img");
+
+        img.src = url;
+        img.alt = "Foto della laurea";
+
+        galleria.appendChild(img);
+
+    });
+
+}
+
+mostraGalleria();
