@@ -1,5 +1,5 @@
 const cloudName = "xcc0isj0";
-const uploadPreset = "Laurea-Simona";
+const uploadPreset = "Laurea Simona";
 
 function caricaFoto() {
 
