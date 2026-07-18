@@ -48,22 +48,25 @@ function caricaFoto() {
 
             messaggio.innerHTML =
             "❌ Errore durante il caricamento";
-            
+
         });
 
     }
 
 }
+
+
 function mostraGalleria() {
 
     const galleria = document.getElementById("galleriaFoto");
+
     if (!galleria) {
-    console.log("Galleria non trovata");
-    return;
-}
+        console.log("Galleria non trovata");
+        return;
+    }
 
     const immagini = [
-        "https://res.cloudinary.com/xcc0isj0/image/upload/v1784366321/dvhj9abb1ts1h2czr3tz.jpg"
+        "https://res.cloudinary.com/xcc0isj0/image/upload/v1784399529/k8mh1zp9e5knvdroxevg.jpg"
     ];
 
     immagini.forEach(url => {
@@ -78,5 +81,6 @@ function mostraGalleria() {
     });
 
 }
+
 
 mostraGalleria();
