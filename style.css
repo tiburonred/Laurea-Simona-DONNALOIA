@@ -107,3 +107,17 @@ h2 {
     border: 6px solid #d4af37;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
+
+.foto-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 10px;
+}
+
+.foto-grid img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
