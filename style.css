@@ -115,3 +115,22 @@ h2 {
     object-fit: cover;
     border-radius: 12px;
 }
+#uploadFoto {
+    display: none;
+}
+
+.seleziona-foto {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 35px;
+    border-radius: 30px;
+    background: white;
+    color: #4b101c;
+    font-size: 18px;
+    cursor: pointer;
+    border: 2px solid #d9b56d;
+}
+
+.seleziona-foto:hover {
+    transform: scale(1.03);
+}
