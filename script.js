@@ -1,3 +1,4 @@
+console.log("VERSIONE NUOVA SCRIPT OK");
 Uconst cloudName = "xcc0isj0";
 const uploadPreset = "laurea_simona_2026";
 
