@@ -23,7 +23,7 @@ function caricaFoto() {
         formData.append("upload_preset", uploadPreset);
 
         fetch(
-            `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+            https://api.cloudinary.com/v1_1/${cloudName}/image/upload,
             {
                 method: "POST",
                 body: formData
@@ -37,7 +37,7 @@ function caricaFoto() {
             if (caricamentiCompletati === files.length) {
 
                 messaggio.innerHTML =
-                `✅ ${files.length} foto caricate con successo!`;
+                ✅ ${files.length} foto caricate con successo!;
 
             }
 
@@ -84,3 +84,5 @@ function mostraGalleria() {
 
 
 mostraGalleria();
+
+
