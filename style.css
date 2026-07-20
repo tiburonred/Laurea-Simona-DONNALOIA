@@ -150,3 +150,17 @@ h2 {
 .seleziona-foto:hover {
     transform: scale(1.03);
 }
+@media (max-width: 600px) {
+
+    .foto-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .foto-grid img {
+        width: 100%;
+        height: auto;
+    }
+
+}
