@@ -81,9 +81,20 @@ h2 {
 
 
 .foto-grid {
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.foto-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
 }
 
 
