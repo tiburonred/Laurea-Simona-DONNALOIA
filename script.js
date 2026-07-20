@@ -1,6 +1,4 @@
 
-                mostraGalleria();
-
 const cloudName = "xcc0isj0";
 const uploadPreset = "laurea_simona_2026";
 
