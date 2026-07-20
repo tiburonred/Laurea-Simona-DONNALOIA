@@ -1,4 +1,4 @@
-const cloudName = "xcc0isj0";
+Uconst cloudName = "xcc0isj0";
 const uploadPreset = "laurea_simona_2026";
 
 function caricaFoto() {
@@ -44,7 +44,7 @@ function caricaFoto() {
             }
 
         })
-        .catch(error => {
+                .catch(error => {
 
             console.error(error);
 
