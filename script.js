@@ -12,7 +12,7 @@ function caricaFoto() {
         return;
     }
 
-    messaggio.innerHTML = "⏳ Caricamento in corso...";
+ messaggio.innerHTML = "⏳ Caricamento in corso... FILE: " + files[0].name;
 
     let caricamentiCompletati = 0;
 
