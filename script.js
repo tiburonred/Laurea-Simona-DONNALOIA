@@ -1,8 +1,8 @@
-console.log("SCRIPT NUOVO CARICATO");
-alert("SCRIPT OK");
+
+                mostraGalleria();
+
 const cloudName = "xcc0isj0";
 const uploadPreset = "laurea_simona_2026";
-
 
 function caricaFoto() {
 
@@ -28,13 +28,15 @@ function caricaFoto() {
 
 
         fetch(
-            https://api.cloudinary.com/v1_1/${cloudName}/image/upload,
+            `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
             {
                 method: "POST",
                 body: formData
             }
         )
+
         .then(response => response.json())
+
         .then(data => {
 
             console.log("Foto caricata:", data);
@@ -45,13 +47,13 @@ function caricaFoto() {
             if (caricamentiCompletati === files.length) {
 
                 messaggio.innerHTML =
-                ✅ ${files.length} foto caricate con successo!;
-
-                mostraGalleria();
+                `✅ ${files.length} foto caricate con successo!`;
 
             }
 
         })
+
+
         .catch(error => {
 
             console.error("Errore caricamento:", error);
@@ -64,56 +66,3 @@ function caricaFoto() {
     }
 
 }
-
-
-
-function mostraGalleria() {
-
-    const galleria = document.getElementById("galleriaFoto");
-
-
-    if (!galleria) {
-
-        console.log("Galleria non trovata");
-
-        return;
-
-    }
-
-
-    galleria.innerHTML = "";
-
-
-    const immagini = [
-
-        "https://res.cloudinary.com/xcc0isj0/image/upload/v1784399529/k8mh1zp9e5knvdroxevg.jpg"
-
-    ];
-
-
-
-    immagini.forEach(url => {
-
-
-        const img = document.createElement("img");
-
-
-        img.src = url;
-        img.alt = "Foto della laurea";
-
-        img.width = 300;
-
-        img.style.margin = "10px";
-
-        galleria.appendChild(img);
-
-
-    });
-
-
-}
-
-
-
-mostraGalleria();
-
