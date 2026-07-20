@@ -3,6 +3,7 @@ body {
     font-family: "Georgia", serif;
     background: #f8f1ed;
     color: #4b101c;
+    overflow-x: hidden;
 }
 
 
@@ -12,8 +13,8 @@ body {
     padding: 40px 20px;
     background:
     linear-gradient(
-    rgba(90,10,30,0.92),
-    rgba(60,5,20,0.95)
+        rgba(90,10,30,0.92),
+        rgba(60,5,20,0.95)
     );
     color: white;
 }
@@ -30,6 +31,7 @@ h1 {
     margin-bottom: 20px;
 }
 
+
 .data {
     color: #d9b56d;
     font-size: 25px;
@@ -42,10 +44,9 @@ h1 {
 
 
 .foto-placeholder {
-    
-    display:flex;    
-    justify-content:center;
-    margin: 35 px auto;
+    display: flex;
+    justify-content: center;
+    margin: 35px auto;
 }
 
 
@@ -58,53 +59,53 @@ h1 {
 
 
 button {
-    margin-top:25px;
-    padding:15px 35px;
-    border:none;
-    border-radius:30px;
-    background:#d9b56d;
-    color:#4b101c;
-    font-size:18px;
-    cursor:pointer;
+    margin-top: 25px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    background: #d9b56d;
+    color: #4b101c;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 
 .galleria {
-    padding:40px 20px;
-    text-align:center;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 
 h2 {
-    font-size:30px;
+    font-size: 30px;
 }
 
+
+/* GALLERIA RESPONSIVE */
 
 .foto-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
+    padding: 10px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
 }
 
+
 .foto-grid img {
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
-    border-radius: 10px;
+    border-radius: 12px;
     object-fit: cover;
 }
 
 
-.box {
-    height:150px;
-    background:#ddd;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+/* FOTO PRINCIPALE SIMONA */
+
 .foto-simona {
     width: 320px;
     max-width: 90%;
@@ -113,22 +114,25 @@ h2 {
     box-shadow: 0 15px 35px rgba(0,0,0,0.35);
     display: block;
 }
-.foto-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 10px;
+
+
+/* BOX EVENTUALI */
+
+.box {
+    height: 150px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.foto-grid img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px;
-}
+
+/* UPLOAD */
+
 #uploadFoto {
     display: none;
 }
+
 
 .seleziona-foto {
     display: inline-block;
@@ -141,6 +145,7 @@ h2 {
     cursor: pointer;
     border: 2px solid #d9b56d;
 }
+
 
 .seleziona-foto:hover {
     transform: scale(1.03);
