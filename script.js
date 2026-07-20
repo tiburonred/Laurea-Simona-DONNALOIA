@@ -12,9 +12,9 @@ function caricaFoto() {
         return;
     }
 
-    messaggio.innerHTML = "⏳ Caricamento in corso... FILE: " + files[0].name;
+    messaggio.innerHTML = "⏳ Caricamento in corso...";
 
-    let caricamentiCompletati = 0;
+    let completate = 0;
 
 
     for (let i = 0; i < files.length; i++) {
@@ -33,27 +33,15 @@ function caricaFoto() {
             }
         )
 
-        .then(async response => {
-
-            const data = await response.json();
-
-            console.log("RISPOSTA CLOUDINARY:", data);
-
-            if (!response.ok) {
-                throw new Error(data.error?.message || "Errore Cloudinary");
-            }
-
-            return data;
-
-        })
+        .then(response => response.json())
 
         .then(data => {
 
             console.log("Foto caricata:", data);
 
-            caricamentiCompletati++;
+            completate++;
 
-            if (caricamentiCompletati === files.length) {
+            if (completate === files.length) {
 
                 messaggio.innerHTML =
                 ✅ ${files.length} foto caricate con successo!;
@@ -66,10 +54,10 @@ function caricaFoto() {
 
         .catch(error => {
 
-            console.error("Errore caricamento:", error);
+            console.error(error);
 
             messaggio.innerHTML =
-            "❌ Errore durante il caricamento";
+            "❌ Errore caricamento";
 
         });
 
@@ -89,41 +77,30 @@ async function mostraGalleria() {
     }
 
 
-    try {
-
-        const risposta = await fetch(
-            "https://galleria-laurea-simona-v2.tiburonred.workers.dev/api"
-        );
+    const risposta = await fetch(
+        "https://galleria-laurea-simona-v2.tiburonred.workers.dev/api"
+    );
 
 
-        const immagini = await risposta.json();
+    const immagini = await risposta.json();
 
 
-        galleria.innerHTML = "";
+    galleria.innerHTML = "";
 
 
-        immagini.forEach(url => {
+    immagini.forEach(url => {
 
-            const img = document.createElement("img");
+        const img = document.createElement("img");
 
-            img.src = url;
-            img.alt = "Foto della laurea";
+        img.src = url;
 
-            img.style.width = "300px";
-            img.style.margin = "10px";
-            img.style.borderRadius = "10px";
+        img.width = 300;
 
+        img.style.margin = "10px";
 
-            galleria.appendChild(img);
+        galleria.appendChild(img);
 
-        });
-
-
-    } catch (errore) {
-
-        console.error("Errore caricamento galleria:", errore);
-
-    }
+    });
 
 }
 
