@@ -1,3 +1,4 @@
+console.log("SCRIPT NUOVO CARICATO");
 alert("SCRIPT OK");
 const cloudName = "xcc0isj0";
 const uploadPreset = "laurea_simona_2026";
