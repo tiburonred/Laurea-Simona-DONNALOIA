@@ -33,9 +33,21 @@ function caricaFoto() {
             }
         )
 
-        .then(response => response.json())
+       .then(async response => {
 
-        .then(data => {
+    const data = await response.json();
+
+    console.log("RISPOSTA CLOUDINARY:", data);
+
+    if (!response.ok) {
+        throw new Error(data.error?.message || "Errore Cloudinary");
+    }
+
+    return data;
+
+})
+
+.then(data => {
 
             console.log("Foto caricata:", data);
 
