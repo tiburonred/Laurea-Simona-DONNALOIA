@@ -87,7 +87,8 @@ async function mostraGalleria() {
             img.src = url;
             img.alt = "Foto della laurea";
 
-            img.style.width = "300px";
+            img.style.width = "100px";
+             img.style.maxWidth = "100px";
             img.style.margin = "10px";
             img.style.borderRadius = "10px";
 
