@@ -32,6 +32,8 @@ function caricaFoto() {
         .then(response => response.json())
         .then(data => {
 
+            console.log("Foto caricata:", data);
+
             caricamentiCompletati++;
 
             if (caricamentiCompletati === files.length) {
@@ -39,12 +41,15 @@ function caricaFoto() {
                 messaggio.innerHTML =
                 ✅ ${files.length} foto caricate con successo!;
 
+                // aggiorna la galleria dopo il caricamento
+                mostraGalleria();
+
             }
 
         })
         .catch(error => {
 
-            console.error(error);
+            console.error("Errore caricamento:", error);
 
             messaggio.innerHTML =
             "❌ Errore durante il caricamento";
@@ -65,9 +70,14 @@ function mostraGalleria() {
         return;
     }
 
+    galleria.innerHTML = "";
+
     const immagini = [
+
         "https://res.cloudinary.com/xcc0isj0/image/upload/v1784399529/k8mh1zp9e5knvdroxevg.jpg"
+
     ];
+
 
     immagini.forEach(url => {
 
@@ -75,6 +85,9 @@ function mostraGalleria() {
 
         img.src = url;
         img.alt = "Foto della laurea";
+        img.width = 300;
+
+        img.style.margin = "10px";
 
         galleria.appendChild(img);
 
@@ -84,5 +97,4 @@ function mostraGalleria() {
 
 
 mostraGalleria();
-
 
