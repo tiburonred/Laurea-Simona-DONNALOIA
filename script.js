@@ -39,10 +39,8 @@ function caricaFoto() {
 
             if (completate === files.length) {
                 messaggio.innerHTML =
-`✅ ${files.length} foto caricate con successo!`;
+ `✅ ${files.length} foto caricate con successo!`;
 
-                messaggio.innerHTML =
-               `✅ ${files.length} foto caricate con successo!;
 
             }
 
