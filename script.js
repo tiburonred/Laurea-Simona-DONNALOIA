@@ -1,51 +1,8 @@
 const cloudName = "xcc0isj0";
 const uploadPreset = "laurea_simona_2026";
 
+
 function caricaFoto() {
-   async function mostraGalleria() {
-
-    const galleria = document.getElementById("galleriaFoto");
-
-    if (!galleria) {
-        console.log("Galleria non trovata");
-        return;
-    }
-
-    try {
-
-        const risposta = await fetch(
-            "https://galleria-laurea-simona-v2.tiburonred.workers.dev/api"
-        );
-
-        const immagini = await risposta.json();
-
-        galleria.innerHTML = "";
-
-        immagini.forEach(url => {
-
-            const img = document.createElement("img");
-
-            img.src = url;
-            img.alt = "Foto della laurea";
-
-            img.style.width = "300px";
-            img.style.margin = "10px";
-            img.style.borderRadius = "10px";
-
-            galleria.appendChild(img);
-
-        });
-
-    } catch (errore) {
-
-        console.error("Errore caricamento galleria:", errore);
-
-    }
-
-}
-
-
-mostraGalleria(); 
 
     const files = document.getElementById("uploadFoto").files;
     const messaggio = document.getElementById("messaggioUpload");
@@ -55,7 +12,7 @@ mostraGalleria();
         return;
     }
 
- messaggio.innerHTML = "⏳ Caricamento in corso... FILE: " + files[0].name;
+    messaggio.innerHTML = "⏳ Caricamento in corso... FILE: " + files[0].name;
 
     let caricamentiCompletati = 0;
 
@@ -69,43 +26,43 @@ mostraGalleria();
 
 
         fetch(
-            `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+            https://api.cloudinary.com/v1_1/${cloudName}/image/upload,
             {
                 method: "POST",
                 body: formData
             }
         )
 
-       .then(async response => {
+        .then(async response => {
 
-    const data = await response.json();
+            const data = await response.json();
 
-    console.log("RISPOSTA CLOUDINARY:", data);
+            console.log("RISPOSTA CLOUDINARY:", data);
 
-    if (!response.ok) {
-        throw new Error(data.error?.message || "Errore Cloudinary");
-    }
+            if (!response.ok) {
+                throw new Error(data.error?.message || "Errore Cloudinary");
+            }
 
-    return data;
+            return data;
 
-})
+        })
 
-.then(data => {
+        .then(data => {
 
             console.log("Foto caricata:", data);
 
             caricamentiCompletati++;
 
-
             if (caricamentiCompletati === files.length) {
 
                 messaggio.innerHTML =
-                `✅ ${files.length} foto caricate con successo!`;
+                ✅ ${files.length} foto caricate con successo!;
+
+                mostraGalleria();
 
             }
 
         })
-
 
         .catch(error => {
 
@@ -119,3 +76,57 @@ mostraGalleria();
     }
 
 }
+
+
+
+async function mostraGalleria() {
+
+    const galleria = document.getElementById("galleriaFoto");
+
+    if (!galleria) {
+        console.log("Galleria non trovata");
+        return;
+    }
+
+
+    try {
+
+        const risposta = await fetch(
+            "https://galleria-laurea-simona-v2.tiburonred.workers.dev/api"
+        );
+
+
+        const immagini = await risposta.json();
+
+
+        galleria.innerHTML = "";
+
+
+        immagini.forEach(url => {
+
+            const img = document.createElement("img");
+
+            img.src = url;
+            img.alt = "Foto della laurea";
+
+            img.style.width = "300px";
+            img.style.margin = "10px";
+            img.style.borderRadius = "10px";
+
+
+            galleria.appendChild(img);
+
+        });
+
+
+    } catch (errore) {
+
+        console.error("Errore caricamento galleria:", errore);
+
+    }
+
+}
+
+
+
+mostraGalleria();
