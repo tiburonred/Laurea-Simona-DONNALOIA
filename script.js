@@ -73,8 +73,8 @@ async function mostraGalleria() {
     try {
 
         const risposta = await fetch(
-            "https://galleria-laurea-simona-v2.tiburonred.workers.dev/api"
-        );
+    "https://galleria-laurea-simona-v2.tiburonred.workers.dev/api?nocache=" + Date.now()
+);
 
         const immagini = await risposta.json();
 
