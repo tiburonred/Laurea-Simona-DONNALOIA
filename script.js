@@ -1,8 +1,51 @@
-alert("SCRIPT NUOVO");
 const cloudName = "xcc0isj0";
 const uploadPreset = "laurea_simona_2026";
 
 function caricaFoto() {
+   async function mostraGalleria() {
+
+    const galleria = document.getElementById("galleriaFoto");
+
+    if (!galleria) {
+        console.log("Galleria non trovata");
+        return;
+    }
+
+    try {
+
+        const risposta = await fetch(
+            "https://galleria-laurea-simona-v2.tiburonred.workers.dev/api"
+        );
+
+        const immagini = await risposta.json();
+
+        galleria.innerHTML = "";
+
+        immagini.forEach(url => {
+
+            const img = document.createElement("img");
+
+            img.src = url;
+            img.alt = "Foto della laurea";
+
+            img.style.width = "300px";
+            img.style.margin = "10px";
+            img.style.borderRadius = "10px";
+
+            galleria.appendChild(img);
+
+        });
+
+    } catch (errore) {
+
+        console.error("Errore caricamento galleria:", errore);
+
+    }
+
+}
+
+
+mostraGalleria(); 
 
     const files = document.getElementById("uploadFoto").files;
     const messaggio = document.getElementById("messaggioUpload");
