@@ -42,6 +42,7 @@ function caricaFoto() {
 
                 messaggio.innerHTML =
                 `✅ ${files.length} foto caricate con successo!`;
+                mostraGalleria();
 
             }
 
