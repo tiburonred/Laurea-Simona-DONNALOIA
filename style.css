@@ -153,14 +153,15 @@ h2 {
 @media (max-width: 600px) {
 
     .foto-grid {
-        grid-template-columns: 1fr;
-        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
         padding: 10px;
     }
 
     .foto-grid img {
         width: 100%;
-        height: auto;
+        height: 160px;
+        object-fit: cover;
     }
 
 }
